@@ -1,255 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SGMEnterprise</title>
-<style>
-/* for upper v shape design start here */
-.v-shape {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px; /* Adjust this value as needed */
-    overflow: hidden;
-    background: linear-gradient(to right, blue 20%, red 0); /* Linear gradient for two colors */
-    z-index: 1; /* Ensure the shape is above the logo */
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>sumanproject.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <style>
+        /* for upper v shape design start here */
+        .v-shape {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; /* Adjust this value as needed */
+            overflow: hidden;
+            background: linear-gradient(to right, blue 20%, red 0); /* Linear gradient for two colors */
+            z-index: 1; /* Ensure the shape is above the logo */
+        }
+
+        .v-shape:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 200%;
+            height: 100%;
+            background: white; /* Set the background color of the V-shape to white */
+            transform: translateX(-50%);
+            clip-path: polygon(5% 100%, 35% 10%, 100% 130%); /* Adjust clip-path for the V shape */
+        }
+
+        .logo {
+            position: fixed;
+            top: 1px;
+            left: 27%;
+            transform: translateX(-50%);
+            z-index: 2;
+            width: 40%; /* Ensure the logo spans the entire width of the viewport */
+        }
+
+        .mybar {
+            padding-top: 90px;
+            
+        }
+       
+
+        /* Custom styles for dropdown items on touch */
+        .dropdown-item:focus,
+        .dropdown-item:hover,
+        .dropdown-item:active {
+            background-color:rgb(255, 144, 1); /* Change the background color as desired */
+        }
+     
+     .nav-link:focus,
+        .nav-link:hover,
+        .nav-link:active {
+           background-color :rgb(255, 144, 1); ;
+        }
+       .dropdown-menu {
+    background-color: rgba(11 , 40, 163 , 0.8); /* Fully opaque coral color */
 }
-
-.v-shape:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 200%;
-    height: 100%;
-    background: white; /* Set the background color of the V-shape to white */
-    transform: translateX(-50%);
-    clip-path: polygon(5% 100%, 35% 10%, 100% 130%); /* Adjust clip-path for the V shape */
+  .navbar {
+    background-color: rgba(11 , 40 , 163 , 1); /* Fully opaque coral color */
 }
-
-.logo {
-  position: fixed;
-  top: 1px;
-  left: 27%;
-  transform: translateX(-50%);
-  z-index: 2;
-  width: 40%; /* Ensure the logo spans the entire width of the viewport */
+ .dropdown-divider-light {
+        border-top: 3px solid white; /* Adjust color as needed */
+    }
+       .tab-content {
+    background-color: rgba(0 , 206, 255 , 0.2); /* Fully opaque coral color */
 }
-
-.logo img {
-    width: 40%;
+ .w3-container {
+    background-color: rgba(0 , 206, 255 , 0.2); /* Fully opaque coral color */
 }
-
-.content {
-  padding-top: 120px; /* Adjusted value to accommodate the fixed logo */
-}
-          /* for upper v shape design end here */
-
-
-
-          /* profile box design start here */
-body {font-family: "Lato", sans-serif;}
-
-.tablink {
-  position: relative;
-  background-color: #555;
-  color: white;
-  float: left;
-  border: 2px solid transparent; /* Adding a transparent border */
-  border-radius: 10px; /* Adding border-radius for rounded corners */
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 50%;
-  transition: all 0.3s ease; /* Adding transition for smooth effect */
-}
-
-.tablink:hover {
-  background-color: #777; /* Change background color on hover */
-  border-color: white; /* Change border color on hover */
-}
-
-
-/* Style the tab content */
-.tabcontent {
-   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 150px 50px 50px; /* Added padding to the top */
-  text-align: center;
-}
-#London {background-color:MediumSeaGreen;}
-#Oslo {background-color:LightGray;}
-          /* profile box design end here */ 
-          
-/*           service section design start here  */ 
-         .accordion {
- background-color:Violet;
-  color: black ;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 25px;
-  transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color:white ; 
-}
-
-.panel {
-  padding: 0 18px;
-  display: none;
-  background-color: skyblue;
-  overflow: hidden;
-  position: relative; /* Add position relative */
-  z-index: 2; /* Set a higher z-index to ensure it's above other elements */
-}  
-  
-  /*           service section design end here  */ 
-  
-  
-.active .panel {
-  margin-top: 20px; /* Adjusted margin to move the panel down when active */
-}
-
-/* Style for ABOUT US heading */
-.about-us-heading {
-  color: red; /* Text color */
-  font-size: 40px; /* Font size */
-  text-align: center; /* Center align text */
-  margin-top: 50px; /* Add margin from top */
-}
-
-
-  .container {
-    background-color: #333; /* Dark background color */
-    color: white; /* White text color */
-    padding: 20px; /* Add padding for spacing */
-    margin-top: 20px; /* Add margin from the top */
-  }
-  
-  .footer {
-    background-color: blue; /* Dark background color */
-    color: white; /* White text color */
-    padding: 20px; /* Add padding for spacing */
-    margin-top: 20px; /* Add margin from the top */
-  justify-content: center; /* Center align items horizontally */
-}
-  
-  
-  .contact-info {
-  display: flex; /* Use flexbox for contact info */
-  align-items: center; /* Center align items vertically */
-   display: flex; /* Use flexbox to arrange items horizontally */  
-     display: flex;
-}
-
-
-.contact-info i {
-  margin-right: 10px; /* Add space between icon and text */
-}
-.contact-info:first-child {
-  margin-top: 0; /* Ensure the first contact-info item has no top margin */
-}
-
-body {
+    
+     body {
   font-family: Poppins, sans-serif;
-  font-size: 16px;  
+  font-size: 20px;  
 }
 
 h2 {
   font-family: 'Abril Fatface', serif;
-  font-size: 46px;  
+  font-size: 30px;  
 }
 h3 {
   font-family: 'Abril Fatface', serif;
-  font-size: 30px;  
+  font-size: 25px;  
 }
 h1 {
   font-family: 'Abril Fatface', serif;
-  font-size: 30px;  
+  font-size: 35px;  
 }
 
-</style>
+a {
+  font-family: 'Abril Fatface', serif;
+  font-size: 20px;  
+}
 
+.container {
+   width: 100%;
+               max-width: none; /* Ensure no maximum width */
+   
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    padding: 25px; /* Add padding for spacing */
+    margin-top: 5px; /* Add margin from the top */
+  }
+   
+   .dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  .dropdown:hover .dropdown-menu { 
+            display: block; 
+        } 
+         .footer {
+    background-color: rgb(0, 0, 173);  /* Dark background color */
+   
+}
+        
+ 
+    </style>
 </head>
 
 <body>
-
-<!--       upper logo start here  -->
-<div class="v-shape"></div>
-<div class="logo">
-   <img src="logo3.png" alt="Logo" style="width:20%">
-
-   <img src="logo1.png" alt="Logo" style="width:30%">
-
-</div>
-<!--       upper logo start here  -->
-
-
-<div class="content">
-  <!-- profile box inside writtings start here -->
-
-       <h1 class="about-us-heading">ABOUT US:</h1>
-
-    <div id="London" class="tabcontent">
-      <h1>Company Profile:</h1>
-      <h2>SGM Enterprise was established in 2023. SGM is a dynamic company offering integrated solutions in transport, manpower services, and training. With a steadfast commitment to excellence and customer satisfaction, we strive to deliver reliable, efficient, and innovative services that meet the diverse needs of our clients across various industries.</h2>
+    <!--       upper logo start here  -->
+    <div class="v-shape"></div>
+    <div class="logo">
+        <img src="logo3.png" alt="Logo" style="width:22%">
+        <img src="logo1.png" alt="Logo" style="width:25%">
     </div>
+    
+    
+    <!--       upper logo end here  -->
+    <nav class="navbar mybar navbar-expand-sm bg-dark">
+    <div class="container-fluid">
+ </div>
+ </nav>
 
-    <div id="Oslo" class="tabcontent">
-      <h1>Mission Statement:</h1>
-      <h2>At SGM Enterprise, our mission is to provide high quality service along with fair and competitive pricing as well as exceptional transport, manpower and training solutions that empower individuals and businesses to thrive in an ever-evolving global landscape, while upholding the highest standards of professionalism, integrity, and excellence.</h2>
+ <nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid">
+ 
+        <a class="navbar-brand nav-link" style="text-shadow:1px 1px 0 #444"href="https://sgm.onrender.com/index">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" style="text-shadow:1px 1px 0 #444"href="#" id="navbarDropdown1" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        About Us
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                      <li class="dropdown-divider-light"></li>                        
+                        <li><a class="dropdown-item text-light" href="#home">Company Profile:</a></li>
+                        <li class="dropdown-divider-light"></li>                        
+                            <li><a class="dropdown-item text-light" href="#menu1">Mission Statement:</a></li>
+                           
+                    </ul>
+                </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" style="text-shadow:1px 1px 0 #444"href="#" id="navbarDropdown1" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Services Offered:
+                    </a>
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdown3">
+                      <li class="dropdown-divider-light"></li>                        
+                        <li><a class="dropdown-item text-light" href="#menu2">Transport Solutions:</a></li>
+                        <li class="dropdown-divider-light"></li>                        
+                            <li><a class="dropdown-item text-light" href="#menu3">Manpower Services</a></li>
+                             <li class="dropdown-divider-light"></li>                        
+                            <li><a class="dropdown-item text-light" href="#menu4">Training Services:</a></li>
+                             <li class="dropdown-divider-light"></li>                        
+                            <li><a class="dropdown-item text-light" href="#menu5">Core Values:</a></li>
+                    </ul>
+                </li>
+              
+            </ul>
+        </div>
     </div>
-
-    <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">Company Profile:</button>
-    <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Mission Statement:</button>
-  </div>
-  <!-- profile box inside writtings end here -->
+</nav>
 
 
-  <!-- service box inside writtings start here -->
-  <h2>Services Offered:</h2>
 
-  <button class="accordion">Transport Solutions:</button>
-  <div class="panel">
-  <h3>Freight Transport: We specialize in the transportation of goods and cargo, offering comprehensive freight transport services tailored to the unique requirements of our clients. Our extensive fleet of vehicles and experienced drivers ensure timely and secure delivery of goods to destinations worldwide.</h3>
+ <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="home" class="w3-container tab-pane active"><br>
+            <h1>Company Profile:</h1>
+      <h3>SGM Enterprise was established in 2023. SGM is a dynamic company offering integrated solutions in transport, manpower services, and training. With a steadfast commitment to excellence and customer satisfaction, we strive to deliver reliable, efficient, and innovative services that meet the diverse needs of our clients across various industries.</h3>
+    </div>
+        <div id="menu1" class="w3-container tab-pane fade"><br>
+            <h1>Mission Statement:</h1>
+      <h3>At SGM Enterprise, our mission is to provide high quality service along with fair and competitive pricing as well as exceptional transport, manpower and training solutions that empower individuals and businesses to thrive in an ever-evolving global landscape, while upholding the highest standards of professionalism, integrity, and excellence.</h3>
+    </div>
+        <div id="menu2" class="w3-container tab-pane fade"><br>
+        <h1>Transport Solutions:</h1>
+           <h3>Freight Transport: We specialize in the transportation of goods and cargo, offering comprehensive freight transport services tailored to the unique requirements of our clients. Our extensive fleet of vehicles and experienced drivers ensure timely and secure delivery of goods to destinations worldwide.</h3>
   <h3>Parcel Delivery: SGM Enterprise provides efficient and cost-effective parcel delivery services for individuals and businesses. With flexible delivery options, we ensure that parcels reach their destinations safely and on time.</h3>
   <h3>Specialized Transport: Our specialized transport services cater to the transportation needs of oversized, hazardous, and high-value cargo. Our team of experts is equipped to handle complex transportation challenges with precision and care.</h3>
   </div>
-
-  <button class="accordion">Manpower Services</button>
-  <div class="panel">
-  <h3>Recruitment and Placement: SGM Enterprise offers comprehensive recruitment and placement services to connect employers with qualified and skilled professionals across various industries and disciplines.</h3>
+         <div id="menu3" class="w3-container tab-pane fade"><br>
+         <h1>Manpower Services</h1>
+           <h3>Recruitment and Placement: SGM Enterprise offers comprehensive recruitment and placement services to connect employers with qualified and skilled professionals across various industries and disciplines.</h3>
  <h3>Staffing: We provide staffing solutions to help businesses meet short and long-term manpower needs, allowing them to maintain productivity and flexibility during normal days, peak periods, or special projects.</h3>
  <h3>Outsourcing Solutions: Our outsourcing services enable businesses to streamline operations and reduce costs by outsourcing non-core functions such as administration, customer service, training, and logistics management etc.</h3>
   </div>
-
-<button class="accordion">Training Services:</button>
-<div class="panel">
-<h3>Skills Development: SGM Enterprise offers a wide range of training programs and workshops designed to enhance the skills and competencies of individuals in various fields, including technical, soft skills, managerial, customer service, behavioural, logistics and warehouse management.</h3>
+        <div id="menu4" class="w3-container tab-pane fade"><br>
+        <h1>Training Services:</h1>
+          <h3>Skills Development: SGM Enterprise offers a wide range of training programs and workshops designed to enhance the skills and competencies of individuals in various fields, including technical, soft skills, managerial, customer service, behavioural, logistics and warehouse management.</h3>
 <h3>Module Creation: We provide professional module creation services (PPT module, e-Learning module) which play a crucial role in helping organizations and institutions to develop high-quality, effective learning materials to meet the needs of their audiences.</h3>
 <h3>Corporate Training: Our corporate training solutions are tailored to meet the specific needs of organizations, addressing skill gaps and empowering employees to achieve peak performance and productivity.</h3>
 </div>
-
-<button class="accordion">Core Values:</button>
-<div class="panel">
-<h3>Excellence: We are committed to delivering excellence in all aspects of our services, from transport and manpower solutions to training and customer support.</h3>
+         <div id="menu5" class="w3-container tab-pane fade"><br>
+         <h1>Core Values:</h1>
+           <h3>Excellence: We are committed to delivering excellence in all aspects of our services, from transport and manpower solutions to training and customer support.</h3>
 <h3>Integrity: Integrity is the foundation of our business. We conduct ourselves with honesty, transparency, and ethical behavior in all our interactions.</h3>
 <h3>Innovation: We embrace innovation and leverage cutting-edge technology to drive continuous improvement and enhance the efficiency of our services.</h3>
 <h3>Customer Focus: We prioritize the needs and satisfaction of our customers, striving to exceed their expectations and build long-term relationships based on trust and mutual respect.</h3>
 </div>
-                     <!-- service box inside writtings end here  -->
-<h2>Why Choose SGM Enterprise?</h2>                     
+      </div>
+      
+     <h2>Why Choose SGM Enterprise?</h2>                     
 <div class="container">
  <h3>Comprehensive Solutions: SGM Enterprise offers a comprehensive suite of transport, manpower, and training solutions, providing clients with a one-stop destination for their diverse needs.</h3>
 <h3>Expertise: With years of experience and expertise in the industry, we have the knowledge and resources to deliver customized solutions that address the unique challenges of each client.</h3>
@@ -258,63 +238,53 @@ h1 {
 <h3>Choose SGM Enterprise as your trusted partner for transport, manpower, and training solutions, and experience the difference that our commitment to excellence can make.</h3>
 </div>
 
-<div class="footer">
-    <div class="contact-info">
-    <i class="fas fa-phone"></i> 7439149095<br>
-    <a href="https://www.google.com/maps/search/?api=1&query=119/29A%2C%20Sarat%20Ghosh%20Garden%20Road%2C%20Dhakuria%2C%20Kolkata%2C%20700031%2C%20WB" target="_blank">
-    <i class="fas fa-map-marker-alt justify-content: space-between"></i> 119/29A, Sarat Ghosh Garden Road, Dhakuria, Kolkata, 700031, WB    
-</a>
-     </div>
-     
-      <div class="contact-info">
-<a href="mailto:hello.sgmenterprise@gmail.com"><i class="far fa-envelope"></i> hello.sgmenterprise@gmail.com</a>
-      <i class="fas fa-globe"></i> <a href="https://www.sgmenterprise.in/com">www.sgmenterprise.in/com</a>
-          
-     </div>    
+ <div class="footer">
+    <div class="d-flex justify-content-between">
+        <div class="vertical">
+            <i class="fas fa-phone text-white"></i> 
+            <a href="tel:7439149095" class="text-white">7439149095</a><br>
+            <a href="https://www.google.com/maps/search/?api=1&query=119/29A%2C%20Sarat%20Ghosh%20Garden%20Road%2C%20Dhakuria%2C%20Kolkata%2C%20700031%2C%20WB" target="_blank" class="text-white">
+                <i class="fas fa-map-marker-alt"></i> <span>119/29A, Sarat Ghosh Garden Road, Dhakuria, Kolkata, 700031, WB</span>    
+            </a>
+        </div>
+        <div class="vertical">
+            <a href="mailto:hello.sgmenterprise@gmail.com" class="text-white"><i class="far fa-envelope"></i> <span>hello.sgmenterprise@gmail.com</span></a>
+            <div class="vertical-links">
+                <i class="fas fa-globe text-white"></i> <a href="https://www.sgmenterprise.in/com" class="text-white">www.sgmenterprise.in/com</a>         
+            </div>
+        </div>
+    </div>
 </div>
 
+
+   
+     
+
 <script>
+$(document).ready(function () {
+    $('.dropdown-item').click(function (event) {
+        event.preventDefault(); // Prevent the default behavior of anchor tag
+        var tabId = $(this).attr('href'); // Get the href attribute of the clicked dropdown item
+        $('.tab-pane').removeClass('active show'); // Remove 'active' and 'show' classes from all tab panes
+        $(tabId).addClass('active show'); // Add 'active' and 'show' classes to the tab content corresponding to the clicked dropdown item
+        $(this).closest('.dropdown-menu').removeClass('show'); // Close the dropdown menu
+    });
+});
 
-                 /*profile box onclick() script start here  */
-
-function openCity(cityName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(cityName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-
-}
-       // Get the element with id="defaultOpen" and click on it
-       document.getElementById("defaultOpen").click();
-
-       
-              /* profile box onclick() script end here  */
-
-             /* service information box onclick() script start here  */
-
-              var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
+    
+    $(document).ready(function(){
+        $('.nav-link ').hover(function(){
+          $(this).find('.dropdown-item')
+          .stop(true, true).delay(100).fadeIn(200);
+        }, function(){
+          $(this).find('.dropdown-item')
+          .stop(true, true).delay(100).fadeOut(200);
+        });
   });
-}
-             /* service information box onclick() script end here  */
-
 </script>
+
+
+
 </body>
+
 </html>
