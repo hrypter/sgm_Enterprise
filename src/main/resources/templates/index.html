@@ -37,16 +37,68 @@
             clip-path: polygon(5% 100%, 35% 10%, 100% 130%); /* Adjust clip-path for the V shape */
         }
 
-        .logo {
-            position: fixed;
-            top: 1px;
-            left: 27%;
-            transform: translateX(-50%);
-            z-index: 2;
-            width: 41%; /* Ensure the logo spans the entire width of the viewport */
-        }
+   /* Adjustments for logo and company name */
+/* Adjustments for logo and company name */
+.logo {
+    position: fixed;
+    top: 1px;
+   left:30%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex; /* Make the logo and text flex items */
+    align-items: center; /* Center vertically */
+}
 
-        .mybar {
+
+.logo::after {
+    content: ""; /* Add pseudo-element for the line */
+    display: block;
+    width: 3px; /* Width of the line */
+    height: 90px; /* Height of the line */
+    background-color: blue; /* Line color */
+    margin-left: -200px; /* Adjust the space between logo and line */
+    margin-top:6px; 
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column; /* Stacking elements vertically */
+    align-items: center; /* Centering items horizontally */
+     margin-left: 20px; /* Adjust the space between logo and line */
+     margin-top:5px; 
+     
+}
+
+
+.sgm {
+   font-family:Fantasy;
+    font-size:40px; 
+   margin-left: -35px; /* Adjust the space between logo and line */
+      letter-spacing:20px; /* Add spacing between letters */
+      color:rgb(41, 60, 129); /* Line color */
+    
+}
+
+.enterprise {
+    font-family: Lora, serif;
+    font-size: 30px;
+    margin-left:-50px; /* Adjust the space between logo and line */
+     margin-top:-13px; 
+    letter-spacing:1px; /* Add spacing between letters */
+         font-weight: bold;
+          color:rgb(255, 26, 32); /* Line color */
+    
+}
+.other {
+    font-family: 'Fjalla One', sans-serif; /* Example font-family */
+    font-size: 10px; /* Example font-size */
+    margin-left: -5px; /* Adjust the space between logo and line */
+      margin-top:1px;
+     font-weight: bold;
+          color: rgb(255, 104, 0); /* Line color */
+    
+}
+     .mybar {
             padding-top: 90px;
             
         }
@@ -81,25 +133,25 @@
 }
     
      body {
-  font-family: Poppins, sans-serif;
+  font-family: Tahoma;
   font-size: 20px;  
 }
 
 h2 {
-  font-family: 'Abril Fatface', serif;
+  font-family: Tahoma;
   font-size: 30px;  
 }
 h3 {
-  font-family: 'Abril Fatface', serif;
+  font-family: Tahoma;
   font-size: 25px;  
 }
 h1 {
-  font-family: 'Abril Fatface', serif;
+  font-family: Tahoma;
   font-size: 35px;  
 }
 
 a {
-  font-family: 'Abril Fatface', serif;
+  font-family: Tahoma;
   font-size: 20px;  
 }
 
@@ -166,12 +218,17 @@ a {
 
 <body>
     <!--       upper logo start here  -->
-    <div class="v-shape"></div>
+    <div class="v-shape"></div>    
     <div class="logo">
-        <img src="logo3.png" alt="Logo" style="width:22%">
-        <img src="logo1.png" alt="Logo" style="width:28%">
-    </div>
-    
+        <img src="logo3.png" alt="Logo" style="width:23%">
+         <h1 class="logo-text">
+        <span class="sgm">SGM</span>
+        <span class="enterprise">Enterprise</span>
+        <span class="other">Creating Smiles,Spreading Happiness</span>
+        
+    </h1>
+</div>
+
     
     <!--       upper logo end here  -->
     <nav class="navbar mybar navbar-expand-sm bg-dark">
@@ -198,7 +255,8 @@ a {
                         <li><a class="dropdown-item text-light" href="#home">Company Profile:</a></li>
                         <li class="dropdown-divider-light"></li>                        
                             <li><a class="dropdown-item text-light" href="#menu1">Mission Statement:</a></li>
-                           
+                            <li class="dropdown-divider-light"></li>                        
+                            <li><a class="dropdown-item text-light" href="#menu5">Core Values:</a></li>
                     </ul>
                 </li>
                  <li class="nav-item dropdown">
@@ -213,8 +271,6 @@ a {
                             <li><a class="dropdown-item text-light" href="#menu3">Manpower Services</a></li>
                              <li class="dropdown-divider-light"></li>                        
                             <li><a class="dropdown-item text-light" href="#menu4">Training Services:</a></li>
-                             <li class="dropdown-divider-light"></li>                        
-                            <li><a class="dropdown-item text-light" href="#menu5">Core Values:</a></li>
                     </ul>
                 </li>
               
