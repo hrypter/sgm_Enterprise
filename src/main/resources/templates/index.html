@@ -9,20 +9,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>sumanproject.com</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     
     <style>
 
-.logo {
+.logo-container {
     position: fixed;
-    top: -32px;
-    left: 87%;
-    transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
-    display: flex; 
-    align-items: center;
-    width: 104%;
 }
+
+.white-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    width: 100%; /* Ensure full width */
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.logo img {
+    max-width: 100%;
+    height:auto;
+}
+
+
 
      .mybar {
             padding-top: 90px;
@@ -111,18 +133,10 @@ a {
 </head>
 <body>
 
-    <nav class="navbar mybar navbar-expand-sm bg-white fixed-top">
-    <div class="container-fluid">
     <div class="logo">
-        <img src="logo.png" alt="Logo" style="width:21%">
+<img src="logo.png" alt="Logo" style="width: 25%;    top: -32px;">
 </div>
- </div>
- </nav>
 
-  <nav class="navbar mybar navbar-expand-sm bg-white">
-    <div class="container-fluid">
- </div>
- </nav>
 
  <nav class="navbar navbar-expand-sm navbar-dark ">
     <div class="container-fluid">
